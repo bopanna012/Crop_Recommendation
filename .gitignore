@@ -1,0 +1,22 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+__MACOSX/
+
+# Editor / OS
+.vscode/
+Thumbs.db
+
+# Misc debug artifacts
+page_snapshot.html
+streamlit_screenshot.png
