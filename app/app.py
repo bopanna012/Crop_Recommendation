@@ -41,11 +41,11 @@ st.sidebar.header("⚙️ Input Parameters")
 
 N = st.sidebar.slider("Nitrogen (N)", 0, 200, 50)
 P = st.sidebar.slider("Phosphorus (P)", 0, 200, 50)
-K = st.sidebar.slider("Potassium (K)", 0, 200, 50)
+K = st.sidebar.slider("Potassium (K)", 0, 210, 50)
 
 temperature = st.sidebar.slider("Temperature (°C)", 0.0, 60.0, 25.0)
 humidity = st.sidebar.slider("Humidity (%)", 0.0, 100.0, 70.0)
-ph = st.sidebar.slider("Soil pH", 0.0, 14.0, 6.5)
+ph = st.sidebar.slider("Soil pH", 3.5, 10.0, 6.5)
 rainfall = st.sidebar.slider("Rainfall (mm)", 0.0, 500.0, 150.0)
 
 FEATURE_NAMES = ["N", "P", "K", "temperature", "humidity", "ph", "rainfall"]

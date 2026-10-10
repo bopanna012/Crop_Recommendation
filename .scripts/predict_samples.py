@@ -1,8 +1,11 @@
 import joblib
 import numpy as np
+import pandas as pd
 
 model = joblib.load('models/crop_rf_model.pkl')
 le = joblib.load('models/label_encoder.pkl')
+
+FEATURE_NAMES = ["N", "P", "K", "temperature", "humidity", "ph", "rainfall"]
 
 samples = [
     [50,50,50,25,70,6.5,150],  # default
@@ -11,7 +14,7 @@ samples = [
 ]
 
 for i,s in enumerate(samples,1):
-    probs = model.predict_proba([s])[0]
+    probs = model.predict_proba(pd.DataFrame([s], columns=FEATURE_NAMES))[0]
     classes = le.inverse_transform(model.classes_)
     top = sorted(zip(classes, probs*100), key=lambda x:-x[1])[:3]
     print(f"Sample {i}: {s}")
